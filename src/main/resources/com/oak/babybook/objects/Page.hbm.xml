@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.oak.babybook.objects.Page" table="PAGE">
+		<cache usage="read-write" />
+	
+		<id name="id" column="PAGE_ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" column="NAME" />
+		<property name="description" column="DESCRIPTION" />
+		<property name="validFrom" column="VALID_FROM" />
+		<property name="validTo" column="VALID_TO" />
+		<property name="expiryDate" column="EXPIRY_DATE" />
+		
+		<set name="events" table="EVENT" lazy="false">
+			<key column="PAGE_ID" />
+			<one-to-many class="com.oak.babybook.objects.Event" />
+		</set>				
+		
+	</class>
+</hibernate-mapping>

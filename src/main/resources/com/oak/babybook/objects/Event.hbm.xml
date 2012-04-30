@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.oak.babybook.objects.Event" table="EVENT"
+		dynamic-update="false"
+		dynamic-insert="false">
+		
+		<cache usage="read-write" />
+		
+		<id name="id" column="ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" column="NAME" type="string" not-null="true" length="50"/>
+		<property name="location" column="LOCATION" type="string" not-null="false" length="100"/>
+		<property name="description" column="DESCRIPTION" type="string" not-null="false" length="200"/>
+		<property name="dateTime" column="EVENTDATE" type="date"/>
+		<property name="type" column="EVENTTYPE" />
+		<property name="other" column="OTHER" />
+				
+		<set name="children"  table="PERSON" lazy="false">
+			<key column="EVENT_ID" />
+			<one-to-many class="com.oak.babybook.objects.Person" />
+		</set>		
+
+		<set name="pictures" table="PICTURE" lazy="false">
+			<key column="EVENT_ID" />
+			<one-to-many class="com.oak.babybook.objects.Picture" />
+		</set>
+		
+				
+	</class>
+</hibernate-mapping>
+

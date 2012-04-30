@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.oak.babybook.objects.Person" table="PERSON">
+	
+		<cache usage="read-write" />
+	
+		<id name="id" column="ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="first" column="FIRST" not-null="true" length="50" />
+		<property name="middle" column="MIDDLE" not-null="false" length="50" />
+		<property name="last" column="LAST" not-null="true" length="50" />
+		<property name="email" column="EMAIL" not-null="true" length="75" />
+		<property name="dob" column="DATEOFBIRTH" />
+		<property name="gender" column="GENDER" />
+		
+		<set name="pictures" table="PICTURE" cascade="all">
+			<key column="PERSON_ID" />
+			<one-to-many class="com.oak.babybook.objects.Picture" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+<user>
+	<username>user</username>
+	<password>pass</password>
+	<id>1</id>
+	<first>Patrick</first>
+	<middle>Michael</middle>
+	<last>Callaghan</last>
+	<email>patrick@oakitfinancial.co.uk</email>
+	<gender>MALE</gender>
+	<dob>20100225</dob>
+	<children>
+		<child>
+			<id>1</id>
+			<first>Beth</first>
+			<middle>Anne</middle>
+			<last>Callaghan</last>
+			<email>beth@oakitfinancial.co.uk</email>
+			<gender>FEMALE</gender>
+			<dob>20100225</dob>
+		</child>
+	</children>
+	<pictures>
+		<id>3</id>
+		<picture>
+			<name>MyPhoto.jpg</name>
+			<location>Paris</location>
+			<caption>Me and the girls in Paris</caption>
+		</picture>
+		<id>2</id>
+		<picture>
+			<name>Pic.gif</name>
+			<location>Home</location>
+			<caption>Playing in front of the fire</caption>
+		</picture>
+	</pictures>
+	<events>
+		<event>
+			<id>2</id>
+			<name>Another Event</name>
+			<location>In the park</location>
+			<type>FIRST_STEPS</type>
+			<other>null</other>
+			<description>Another short description</description>
+			<dateTime>20100225</dateTime>
+			<pictures></pictures>
+		</event>
+		<event>
+			<id>3</id>
+			<name>Another1 Event</name>
+			<location>In the park</location>
+			<type>FIRST_STEPS</type>
+			<other>null</other>
+			<description>Another short description</description>
+			<dateTime>20100225</dateTime>
+			<pictures></pictures>
+		</event>
+		<event>
+			<id>1</id>
+			<name>My Event</name>
+			<location>At home</location>
+			<type>SAYINGS</type>
+			<other>null</other>
+			<description>Some short description</description>
+			<dateTime>20100225</dateTime>
+			<pictures>
+				<id>1</id>
+				<picture>
+					<name>WithEvent.gif</name>
+					<location>Event Pic</location>
+					<caption>Picture for the event</caption>
+				</picture>
+			</pictures>
+		</event>
+	</events>
+</user>

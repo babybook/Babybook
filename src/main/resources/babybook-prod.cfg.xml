@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+ 
+  		<property name="connection.url">jdbc:mysql://babybookdb.cmadbhzp87zn.us-east-1.rds.amazonaws.com:3306/babybook</property>
+		<property name="connection.username">babybook</property>
+		<property name="connection.password">BabyB00k</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+  
+		<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
+<!--  
+		<property name="connection.url">jdbc:hsqldb:file:babybookdb</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password"></property>
+		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+  -->
+		<property name="transaction.factory_class ">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- this will show us all sql statements -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- mapping files -->
+		<mapping resource="com/oak/babybook/objects/Person.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Event.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Picture.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Page.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/User.hbm.xml" />
+  	
+	</session-factory>
+</hibernate-configuration>

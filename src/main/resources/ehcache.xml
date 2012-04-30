@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+<defaultCache
+name="defaut"
+maxElementsInMemory="5"
+eternal="false"
+timeToIdleSeconds="20"
+timeToLiveSeconds="20"
+overflowToDisk="false"
+diskPersistent="false"
+memoryStoreEvictionPolicy="LRU"
+/> 
+	<cache
+		name="com.oak.babybook.objects.Page"
+		maxElementsInMemory="1000" 
+		eternal="false" 
+		timeToLiveSeconds="200"
+		overflowToDisk="false"/>
+	<cache
+	name="com.oak.babybook.objects.User"
+		maxElementsInMemory="1000" 
+			eternal="false" 
+			timeToLiveSeconds="200"
+			overflowToDisk="false"/>
+
+	<cache
+	name="com.oak.babybook.objects.Person"
+		maxElementsInMemory="1000" 
+			eternal="false" 
+			timeToLiveSeconds="200"
+			overflowToDisk="false"/>
+	<cache
+	name="com.oak.babybook.objects.Picture"
+		maxElementsInMemory="1000" 
+			eternal="false" 
+			timeToLiveSeconds="200"
+			overflowToDisk="false"/>
+	<cache
+	name="com.oak.babybook.objects.Event"
+		maxElementsInMemory="5000" 
+			eternal="false" 
+			timeToLiveSeconds="200"
+			overflowToDisk="false"/>
+
+</ehcache>
+
+
