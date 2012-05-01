@@ -15,7 +15,7 @@ public class Person extends GeneratedId implements Serializable {
 	private Date dob;
 	private String email;
 	private Gender gender;
-	private Set<Picture> pictures;
+	protected Set<Picture> pictures;
 
 	public Person() {
 	}

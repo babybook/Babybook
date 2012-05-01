@@ -16,7 +16,7 @@
 		<property name="dob" column="DATEOFBIRTH" />
 		<property name="gender" column="GENDER" />
 		
-		<set name="pictures" table="PICTURE" cascade="all">
+		<set name="pictures" table="PICTURE" cascade="all" lazy="false">
 			<key column="PERSON_ID" />
 			<one-to-many class="com.oak.babybook.objects.Picture" />
 		</set>

@@ -5,20 +5,20 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class User extends Person implements Serializable{
+public class User extends Person implements Serializable {
 
 	private String username;
 	private String password;
 
 	private Set<Event> events;
 	private Set<Person> children;
-	private Set<Picture> pictures;
 	private Set<Page> pages;
 
-	public User(){}
+	public User() {
+	}
 
-	public User(Long id, String first, String middle, String last, Date dob,
-			String email, Gender gender, String username, String password) {
+	public User(Long id, String first, String middle, String last, Date dob, String email, Gender gender,
+			String username, String password) {
 		super(id, first, middle, last, dob, email, gender);
 		this.username = username;
 		this.password = password;
@@ -43,11 +43,13 @@ public class User extends Person implements Serializable{
 	public Set<Event> getEvents() {
 		return events;
 	}
+
 	public void setEvents(Set<Event> events) {
 		this.events = events;
 	}
+
 	public void addEvent(Event event) {
-		if (events == null){
+		if (events == null) {
 			events = new HashSet<Event>();
 		}
 		events.add(event);
@@ -60,27 +62,12 @@ public class User extends Person implements Serializable{
 	public void setChildren(Set<Person> children) {
 		this.children = children;
 	}
+
 	public void addChild(Person child) {
-		if (children == null){
+		if (children == null) {
 			children = new HashSet<Person>();
 		}
 		children.add(child);
-	}
-	@Override
-	public Set<Picture> getPictures() {
-		return pictures;
-	}
-
-	@Override
-	public void setPictures(Set<Picture> pictures) {
-		this.pictures = pictures;
-	}
-	@Override
-	public void addPicture(Picture picture) {
-		if (pictures == null){
-			pictures = new HashSet<Picture>();
-		}
-		pictures.add(picture);
 	}
 
 	public Set<Page> getPages() {
@@ -92,7 +79,7 @@ public class User extends Person implements Serializable{
 	}
 
 	public void addPage(Page page) {
-		if (pages == null){
+		if (pages == null) {
 			pages = new HashSet<Page>();
 		}
 		pages.add(page);
@@ -105,7 +92,7 @@ public class User extends Person implements Serializable{
 	}
 
 	@Override
-	public String toXML(){
+	public String toXML() {
 		StringBuffer buffer = new StringBuffer();
 
 		buffer.append("<user>");
@@ -113,17 +100,19 @@ public class User extends Person implements Serializable{
 		buffer.append("<password>" + password + "</password>");
 		buffer.append(super.toXML());
 		buffer.append("<children>");
-		for(Person child: children){
+		for (Person child : children) {
 			buffer.append(child.toXML("child"));
 		}
 		buffer.append("</children>");
 		buffer.append("<pictures>");
-		for(Picture picture : pictures){
-			buffer.append(picture.toXML());
+		if (pictures != null) {
+			for (Picture picture : pictures) {
+				buffer.append(picture.toXML());
+			}
 		}
 		buffer.append("</pictures>");
 		buffer.append("<events>");
-		for(Event event : events){
+		for (Event event : events) {
 			buffer.append(event.toXML());
 		}
 		buffer.append("</events>");
@@ -133,8 +122,11 @@ public class User extends Person implements Serializable{
 	}
 
 	public Picture getPicture(Long pictID) {
-		for(Picture picture : pictures){
-			if (picture.getId().equals(pictID)){
+		if (pictures==null){
+			this.pictures = this.getPictures();
+		}
+		for (Picture picture : pictures) {
+			if (picture.getId().equals(pictID)) {
 				return picture;
 			}
 		}
@@ -142,8 +134,11 @@ public class User extends Person implements Serializable{
 	}
 
 	public Event getEvent(Long eventID) {
-		for(Event event : events){
-			if (event.getId().equals(eventID)){
+		if (events==null){
+			this.events = this.getEvents();
+		}
+		for (Event event : events) {
+			if (event.getId().equals(eventID)) {
 				return event;
 			}
 		}
@@ -151,8 +146,8 @@ public class User extends Person implements Serializable{
 	}
 
 	public Person getChild(Long childID) {
-		for(Person child : children){
-			if (child.getId().equals(childID)){
+		for (Person child : children) {
+			if (child.getId().equals(childID)) {
 				return child;
 			}
 		}

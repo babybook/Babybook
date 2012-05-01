@@ -2,37 +2,43 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
 	<class name="com.oak.babybook.objects.User" table="USER">
-	
+
 		<cache usage="read-write" />
-		
+
 		<id name="id" column="ID">
 			<generator class="increment" />
 		</id>
 
-		<property name="username" column="USERNAME" not-null="true" length="25" />
-		<property name="password" column="PASSWORD" not-null="true" length="25" />
-		<property name="first" column="FIRST" type="string" not-null="true" length="50"/>
-		<property name="middle" column="MIDDLE"  type="string" not-null="false" length="50"/>
-		<property name="last" column="LAST" type="string" not-null="true" length="50" />
-		<property name="email" column="EMAIL" type="string" not-null="true" length="75" />
-		<property name="dob" column="DATEOFBIRTH"  />
-		<property name="gender" column="GENDER"/> 
-		
-		<set name="events" table="EVENT" lazy="false">
+		<property name="username" column="USERNAME" not-null="true"
+			length="25" />
+		<property name="password" column="PASSWORD" not-null="true"
+			length="25" />
+		<property name="first" column="FIRST" type="string" not-null="true"
+			length="50" />
+		<property name="middle" column="MIDDLE" type="string"
+			not-null="false" length="50" />
+		<property name="last" column="LAST" type="string" not-null="true"
+			length="50" />
+		<property name="email" column="EMAIL" type="string" not-null="true"
+			length="75" />
+		<property name="dob" column="DATEOFBIRTH" />
+		<property name="gender" column="GENDER" />
+
+		<set name="events" table="EVENT" lazy="true">
 			<key column="USER_ID" />
 			<one-to-many class="com.oak.babybook.objects.Event" />
-		</set>		
-		<set name="pictures" table="PICTURE" lazy="false">
-			<key column="USER_ID" />
-			<one-to-many class="com.oak.babybook.objects.Picture" />
-		</set>		
-		<set name="children"  table="PERSON" lazy="false">
+		</set>
+		<set name="children" table="PERSON" lazy="true">
 			<key column="USER_ID" />
 			<one-to-many class="com.oak.babybook.objects.Person" />
-		</set>		
-		<set name="pages" table="PAGES" lazy="false">
+		</set>
+		<set name="pages" table="PAGES" lazy="true">
 			<key column="USER_ID" />
-			<one-to-many class="com.oak.babybook.objects.Page" />		
-		</set>		
+			<one-to-many class="com.oak.babybook.objects.Page" />
+		</set>
+		<set name="pictures" table="PICTURE" lazy="true">
+			<key column="USER_ID" />
+			<one-to-many class="com.oak.babybook.objects.Picture" />
+		</set>
 	</class>
 </hibernate-mapping>

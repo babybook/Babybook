@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
-	<class name="com.oak.babybook.objects.Picture" table="PICTURE">
+	<class name="com.oak.babybook.objects.Media" table="MEDIA">
 	
 		<cache usage="read-write" />
 	
-		<id name="id" column="PICTURE_ID">
+		<id name="id" column="MEDIA_ID">
 			<generator class="increment" />
 		</id>
 

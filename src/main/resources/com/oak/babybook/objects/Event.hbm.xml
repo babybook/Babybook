@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
-	<class name="com.oak.babybook.objects.Event" table="EVENT"
-		dynamic-update="false"
-		dynamic-insert="false">
-		
-		<cache usage="read-write" />
-		
+	<class name="com.oak.babybook.objects.Event" table="EVENT">
 		<id name="id" column="ID">
 			<generator class="increment" />
 		</id>
@@ -26,9 +21,7 @@
 		<set name="pictures" table="PICTURE" lazy="false">
 			<key column="EVENT_ID" />
 			<one-to-many class="com.oak.babybook.objects.Picture" />
-		</set>
-		
-				
+		</set>		
 	</class>
 </hibernate-mapping>
 

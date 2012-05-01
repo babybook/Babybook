@@ -7,20 +7,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.oak.babybook.db.MediaDao;
-import com.oak.babybook.db.PictureDao;
 import com.oak.babybook.objects.Media;
-import com.oak.babybook.objects.Picture;
 
-public class PictureDaoImpl implements PictureDao {
+public class MediaDaoImpl implements MediaDao {
 
 	private SessionFactory sessionFactory;
 
-	public PictureDaoImpl(SessionFactory sessionFactory){
+	public MediaDaoImpl(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
 
 	@Override
-	public void insertMedia(Picture media){
+	public void insertMedia(Media media){
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.save(media);
@@ -30,26 +28,26 @@ public class PictureDaoImpl implements PictureDao {
 	}
 
 	@Override
-	public Picture getMedia(Long id) {
+	public Media getMedia(Long id) {
 		Session session = sessionFactory.openSession();
-		Picture media = (Picture)session.load(Picture.class, id);
+		Media media = (Media)session.load(Media.class, id);
 		return media;
 	}
 
 	@Override
-	public List<Picture> getMedias(List<Long> ids) {
+	public List<Media> getMedias(List<Long> ids) {
 		Session session = sessionFactory.openSession();
-		List<Picture> medias = new ArrayList<Picture>();
+		List<Media> medias = new ArrayList<Media>();
 
 		for (Long id : ids){
-			Picture media = (Picture)session.load(Picture.class, id);
+			Media media = (Media)session.load(Media.class, id);
 			medias.add(media);
 		}
 		return medias;
 	}
 
 	@Override
-	public void update(Picture media) {
+	public void update(Media media) {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.saveOrUpdate(media);
@@ -59,7 +57,7 @@ public class PictureDaoImpl implements PictureDao {
 	}
 
 	@Override
-	public void delete(Picture media) {
+	public void delete(Media media) {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.delete(media);

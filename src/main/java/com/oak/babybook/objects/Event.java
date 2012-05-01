@@ -7,7 +7,7 @@ import java.util.Set;
 
 import com.oak.babybook.utils.Utilities;
 
-public class Event extends GeneratedId implements Serializable{
+public class Event extends Taggable implements Serializable{
 
 	private String name;
 	private String location;
@@ -21,9 +21,9 @@ public class Event extends GeneratedId implements Serializable{
 
 	public Event(){}
 
-	public Event(Long id, String name, String location, String description,
+	public Event(Long id, String tags, String name, String location, String description,
 			Date dateTime, EventType type, String other) {
-		super(id);
+		super(id, tags);
 		this.name = name;
 		this.location = location;
 		this.description = description;
@@ -94,20 +94,12 @@ public class Event extends GeneratedId implements Serializable{
 		children.add(child);
 	}
 
-	public final String getTags() {
-		return tags;
-	}
-
-	public final void setTags(String tags) {
-		this.tags = tags;
-	}
-
 	@Override
 	public String toString() {
 
 		return super.toString() + " Event [dateTime=" + dateTime + ", description=" + description
 		+ ", location=" + location + ", name=" + name + ", other="
-		+ other + ", type=" + type + ", pictures=" + pictures + ", tags " + tags + "]";
+		+ other + ", type=" + type + ", pictures=" + pictures + "]";
 	}
 
 	@Override

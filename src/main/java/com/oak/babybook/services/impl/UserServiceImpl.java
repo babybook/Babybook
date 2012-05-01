@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.oak.babybook.db.impl.UserDaoImpl;
 import com.oak.babybook.objects.Event;
+import com.oak.babybook.objects.Media;
 import com.oak.babybook.objects.Person;
 import com.oak.babybook.objects.Picture;
 import com.oak.babybook.objects.User;

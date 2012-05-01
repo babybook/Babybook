@@ -33,6 +33,8 @@
 		<mapping resource="com/oak/babybook/objects/Person.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Event.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Picture.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Audio.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Video.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Page.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/User.hbm.xml" />
   	

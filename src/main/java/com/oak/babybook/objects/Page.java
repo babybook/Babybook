@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Page extends GeneratedId {
+public class Page extends Taggable {
 
 	private static long serialVersionUID = 6681584416819752944L;
 
@@ -18,8 +18,8 @@ public class Page extends GeneratedId {
 	public Page() {
 	}
 
-	public Page(Long id, String name, String description, Date validFrom, Date validTo, Date expiryDate) {
-		super(id);
+	public Page(Long id, String tags, String name, String description, Date validFrom, Date validTo, Date expiryDate) {
+		super(id, tags);
 		this.name = name;
 		this.description = description;
 		this.validFrom = validFrom;

@@ -2,13 +2,13 @@ package com.oak.babybook.objects;
 
 import java.io.Serializable;
 
-public class Picture extends Media implements Serializable{
+public class Video extends Media implements Serializable{
 
-	public Picture(){
+	public Video(){
 		super();
 	}
 
-	public Picture(Long id, String tags, String name, String location, String caption) {
+	public Video(Long id, String tags, String name, String location, String caption) {
 		super(id, tags, MediaType.PHOTO, name, location, caption);
 
 	}
@@ -16,9 +16,9 @@ public class Picture extends Media implements Serializable{
 	@Override
 	public String toXML() {
 		StringBuffer buffer = new StringBuffer();
-		buffer.append("<picture>");
+		buffer.append("<video>");
 		buffer.append(super.toXML());
-		buffer.append("<picture>");
+		buffer.append("<video>");
 
 		return buffer.toString();
 	}

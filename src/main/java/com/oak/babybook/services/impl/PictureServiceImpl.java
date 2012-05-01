@@ -2,9 +2,9 @@ package com.oak.babybook.services.impl;
 
 import java.util.List;
 
+import com.oak.babybook.db.impl.MediaDaoImpl;
 import com.oak.babybook.db.impl.PictureDaoImpl;
 import com.oak.babybook.objects.Picture;
-import com.oak.babybook.objects.User;
 import com.oak.babybook.services.PictureService;
 
 public class PictureServiceImpl implements PictureService {
@@ -17,17 +17,17 @@ public class PictureServiceImpl implements PictureService {
 
 	@Override
 	public Picture getPicture(Long id) {
-		return this.pictureDao.getPicture(id);
+		return this.pictureDao.getMedia(id);
 	}
 
 	@Override
 	public List<Picture> getPictures(List<Long> ids) {
-		return this.pictureDao.getPictures(ids);
+		return this.pictureDao.getMedias(ids);
 	}
 
 	@Override
 	public void insertPicture(Picture picture) {
-		this.pictureDao.insertPicture(picture);
+		this.pictureDao.insertMedia(picture);
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class PictureServiceImpl implements PictureService {
 	@Override
 	public void delete(Picture pict) {
 		if (pict != null) {
-			Picture picture = this.pictureDao.getPicture(pict.getId());
+			Picture picture = this.pictureDao.getMedia(pict.getId());
 
 			if (picture != null) {
 				this.pictureDao.delete(picture);

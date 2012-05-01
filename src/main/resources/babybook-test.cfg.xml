@@ -14,7 +14,7 @@
   
 -->
   
-		<property name="connection.url">jdbc:hsqldb:file:babybookdb</property>
+		<property name="connection.url">jdbc:hsqldb:file:babybookdb1</property>
 		<property name="connection.username">sa</property>
 		<property name="connection.password"></property>
 		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
@@ -32,7 +32,10 @@
 		<!-- mapping files -->
 		<mapping resource="com/oak/babybook/objects/Person.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Event.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Media.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Picture.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Audio.hbm.xml" />
+		<mapping resource="com/oak/babybook/objects/Video.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/Page.hbm.xml" />
 		<mapping resource="com/oak/babybook/objects/User.hbm.xml" />
   	
